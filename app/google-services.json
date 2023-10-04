@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "335575293318",
+    "project_id": "expensemanager-c7009",
+    "storage_bucket": "expensemanager-c7009.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335575293318:android:9cd89e55deb815e6e66007",
+        "android_client_info": {
+          "package_name": "com.example.expensemanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz4h2QptFc2lU2tVYOdsmuu-N-RT6HwIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
