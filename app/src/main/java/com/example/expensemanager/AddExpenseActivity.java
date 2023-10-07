@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.expensemanager.databinding.ActivityAddExpenseBinding;
@@ -18,11 +19,34 @@ import java.util.UUID;
 
 public class AddExpenseActivity extends AppCompatActivity {
     @NonNull ActivityAddExpenseBinding binding;
+    private String type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAddExpenseBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        type = getIntent().getStringExtra("Type");
+
+        if(type.equals("Income")){
+            binding.incomeRadio.setChecked(true);
+        }else{
+            binding.expenseRadio.setChecked(true);
+        }
+
+        binding.incomeRadio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                type="Income";
+            }
+        });
+
+        binding.expenseRadio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                type="Expense";
+            }
+        });
     }
 
     @Override
@@ -48,7 +72,6 @@ public class AddExpenseActivity extends AppCompatActivity {
         String amount = findViewById(R.id.amount).toString();
         String note = findViewById(R.id.note).toString();
         String category = findViewById(R.id.category).toString();
-        String type;
 
         boolean incomeChecked = binding.incomeRadio.isChecked();
 
